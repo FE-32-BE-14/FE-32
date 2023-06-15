@@ -5,6 +5,10 @@ export const GlobalContext = createContext(null);
 const GlobalProvider = ({ children }) => {
   const [numberInput, setNumberInput] = useState("");
   const [selectedPayment, setSelectedPayment] = useState ("")
+  const [email, setEmail] = useState ("")
+  const [username, setUsername] = useState ("")
+  const [number, setNumber] = useState ("")
+
   //   const [isLoading, setIsLoading] = useState(true);
   //   const [nominal, setNominal] = useState(0);
 
@@ -59,6 +63,12 @@ const GlobalProvider = ({ children }) => {
     setNumberInput,
     selectedPayment,
     setSelectedPayment,
+    email,
+    setEmail,
+    number,
+    setNumber,
+    username,
+    setUsername,
   };
 
   return <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>;
