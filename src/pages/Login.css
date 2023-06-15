@@ -1,0 +1,9 @@
+.login__bg {
+    background-image: url(https://i.pinimg.com/564x/e1/ec/10/e1ec107eda8c0eb9236dadc7299278d6.jpg);
+    height: 70vh;
+    width: 60vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
