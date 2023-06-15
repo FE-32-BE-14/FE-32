@@ -1,0 +1,70 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px;
+  font-family: "Poppins",sans-serif;
+}
+
+.navbar-top {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.navbar-logo img {
+  width: 120px;
+  height: 120px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  margin-right: 20px;
+  color: #003a8c;
+  font-weight: bold;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+.search-input {
+  width: 200px;
+  /* tambahkan gaya lain sesuai kebutuhan */
+  margin-right: 10px;
+}
+
+.search-button {
+  background-color: #003a8c;
+  color: #fff;
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-item {
+  margin-right: 10px;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
