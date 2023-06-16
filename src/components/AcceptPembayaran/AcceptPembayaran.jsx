@@ -13,7 +13,7 @@ function AcceptPembayaran() {
   const [data, setData] = useState([]);
 
   const { donasi, setDonasi } = useGlobal();
-  
+
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -87,8 +87,8 @@ function AcceptPembayaran() {
               setName("");
               setDonasi("");
               setHarapan("");
-              setEmail("")
-              setHarapan("")
+              setEmail("");
+              setHarapan("");
             })
             .catch((err) => console.log(err));
           Swal.fire("Terima Kasih!", "Donasi yang anda berikan sudah berhasil", "success").then(() => {
@@ -118,7 +118,7 @@ function AcceptPembayaran() {
               <textarea
                 className="textbox"
                 name="harapan"
-                id="harapan" 
+                id="harapan"
                 placeholder="Tulis doa untuk penggalang dana atau dirimu sendiri  di sini. Biar doa kamu bisa  di lihat dan diamini oleh orang baik lainnya"
                 onChange={handleHarapan}
                 value={harapan}
