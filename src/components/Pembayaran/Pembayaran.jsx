@@ -9,13 +9,13 @@ import { useGlobal } from "../../context/GlobalContext";
 import { useNavigate } from "react-router-dom";
 
 function Pembayaran() {
-  const {numberInput, setNumberInput} = useGlobal();
+  const {donasi, setDonasi} = useGlobal();
   const {selectedPayment, setSelectedPayment} = useGlobal();
 
   const handleNumberInputChange = (e) => {
     const value = e.target.value;
     const cleanedValue = value.replace(/\D/g, "");
-    setNumberInput(cleanedValue);
+    setDonasi(cleanedValue);
   };
 
   const navigate = useNavigate()
@@ -26,8 +26,8 @@ function Pembayaran() {
 
   const handleContinueToDonation = (e) => {
     e.preventDefault();
-    const number = parseInt(numberInput, 10);
-    if (number < 10000 || selectedPayment === "" || numberInput.trim() === "") {
+    const number = parseInt(donasi, 10);
+    if (number < 10000 || selectedPayment === "" || donasi.trim() === "") {
       if (number < 10000) {
         Swal.fire({
           icon: "error",
@@ -57,7 +57,7 @@ function Pembayaran() {
         <div id="pbks">
           <form>
             <p>Nominal Pembayaran</p>
-            <input className="besar" type="text" id="number" name="number" placeholder="Rp." onChange={handleNumberInputChange} value={numberInput} /> <span className="spanPembayaran">Nominal pembayaran RP. 10.000</span>
+            <input className="besar" type="text" id="number" name="number" placeholder="Rp." onChange={handleNumberInputChange} value={donasi} /> <span className="spanPembayaran">Nominal pembayaran RP. 10.000</span>
             <div>
               <p className="jenisPembayaran">Virtual Account (verifikasi otomatis, minimal nominal Rp. 10.000)</p>
               <div id="imgRadio">

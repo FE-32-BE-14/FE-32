@@ -3,11 +3,11 @@ import { createContext, useContext, useState } from "react";
 export const GlobalContext = createContext(null);
 
 const GlobalProvider = ({ children }) => {
-  const [numberInput, setNumberInput] = useState("");
+  const [donasi, setDonasi] = useState("");
   const [selectedPayment, setSelectedPayment] = useState ("")
   const [email, setEmail] = useState ("")
   const [name, setName] = useState ("")
-  const [number, setNumber] = useState ("")
+  const [noRekening, setNoRekening] = useState ("")
 
   //   const [isLoading, setIsLoading] = useState(true);
   //   const [nominal, setNominal] = useState(0);
@@ -59,14 +59,14 @@ const GlobalProvider = ({ children }) => {
   //   };
 
   const value = {
-    numberInput,
-    setNumberInput,
+    donasi,
+    setDonasi,
     selectedPayment,
     setSelectedPayment,
     email,
     setEmail,
-    number,
-    setNumber,
+    noRekening,
+    setNoRekening,
     name,
     setName,
   };
