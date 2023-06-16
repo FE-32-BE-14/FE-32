@@ -64,7 +64,7 @@ function AcceptPembayaran() {
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire("Terima Kasih!", "Donasi yang anda berikan sudah berhasil", "success").then(() => {
-            window.location.href = "/";
+            window.location.href = "/donasi";
           });
         }
       });
