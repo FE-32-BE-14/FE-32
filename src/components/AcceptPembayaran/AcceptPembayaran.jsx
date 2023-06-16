@@ -2,11 +2,14 @@ import "./AcceptPembayaran.css";
 import Form from "react-bootstrap/Form";
 import Swal from "sweetalert2";
 import { useGlobal } from "../../context/GlobalContext";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function AcceptPembayaran() {
-  const {email, setEmail} = useGlobal("");
-  const {number, setNumber} = useGlobal("");
-  const {username, setUsername} = useGlobal("")
+  const { email, setEmail } = useGlobal("");
+  const { number, setNumber } = useGlobal("");
+  const { name, setName } = useGlobal("");
+  const [data, setData] = useState([]);
 
   const { numberInput } = useGlobal();
 
@@ -21,13 +24,13 @@ function AcceptPembayaran() {
   };
 
   const handleUsernameChange = (e) => {
-    setUsername(e.target.value)
-  }
+    setName(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!validateEmail(email) || number === "" || username === "")
+    if (!validateEmail(email) || number === "" || name === "")
       if (!validateEmail(email)) {
         Swal.fire({
           icon: "error",
@@ -40,7 +43,7 @@ function AcceptPembayaran() {
           title: "Oops...",
           text: "Masukan No Virtaul Bank atau E-wallet",
         });
-      } else if(username === ""){
+      } else if (name === "") {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -70,6 +73,30 @@ function AcceptPembayaran() {
       });
     }
   };
+  useEffect(() => {
+    axios
+      .get("https://647db034af984710854a2301.mockapi.io/user")
+      .then((res) => {
+        console.log("username", res.data);
+        setData(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  // cara post api
+  const postData = (e) => {
+    e.preventDefault();
+    axios
+      .post("https://647db034af984710854a2301.mockapi.io/user", {
+        name,
+      })
+      .then((res) => {
+        console.log("post data", res);
+        setData([...data, res.data]);
+        setName("");
+      })
+      .catch((err) => console.log(err));
+  };
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -83,7 +110,7 @@ function AcceptPembayaran() {
             <Form onSubmit={handleSubmit}>
               <p>Isi nominal Donasi</p>
               <p className="valueNominal">Rp. {numberInput}</p>
-              <input type="text" className="valueUsername" name="username" id="username" placeholder="Nama lengkap" value={username} onChange={handleUsernameChange}/>
+              <input type="text" className="valueUsername" name="username" id="username" placeholder="Nama lengkap" value={name} onChange={handleUsernameChange} />
               <input type="text" value={email} onChange={handleEmailChange} className="inputEmail" name="email" id="email" placeholder="Alamat Email" />
               <input type="text" value={number} onChange={handleNumberChange} className="inputEmail" name="rekening" id="rekening" placeholder="No Rekening" />
               <div id="keiinginanUser">
@@ -93,7 +120,7 @@ function AcceptPembayaran() {
               <p className="berdoa">Berdoa di Donasi ini (opsional)</p>
               <textarea className="textbox" placeholder="Tulis doa untuk penggalang dana atau dirimu sendiri  di sini. Biar doa kamu bisa  di lihat dan diamini oleh orang baik lainnya" />
               <div className="btnFinish">
-                <button type="submit" className="btnFinish">
+                <button onClick={postData} type="submit" className="btnFinish">
                   Selesaikan Donasi
                 </button>
               </div>

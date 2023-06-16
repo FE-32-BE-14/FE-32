@@ -6,7 +6,7 @@ const GlobalProvider = ({ children }) => {
   const [numberInput, setNumberInput] = useState("");
   const [selectedPayment, setSelectedPayment] = useState ("")
   const [email, setEmail] = useState ("")
-  const [username, setUsername] = useState ("")
+  const [name, setName] = useState ("")
   const [number, setNumber] = useState ("")
 
   //   const [isLoading, setIsLoading] = useState(true);
@@ -67,8 +67,8 @@ const GlobalProvider = ({ children }) => {
     setEmail,
     number,
     setNumber,
-    username,
-    setUsername,
+    name,
+    setName,
   };
 
   return <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>;
