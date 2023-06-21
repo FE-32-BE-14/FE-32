@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <Routes>
+        {/* masukan endpoint donasi bila layar white screen */}
         <Route path="/donasi" element={<PageDonasi />} />
         <Route path="/pembayaran" element={<PagePembayaran />} />
         <Route path="/accept" element={<PageAcceptPembayaran />} />
