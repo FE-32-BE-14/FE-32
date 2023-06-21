@@ -9,7 +9,33 @@ const GlobalProvider = ({ children }) => {
   const [name, setName] = useState ("")
   const [noRekening, setNoRekening] = useState ("")
 
-  //   const [isLoading, setIsLoading] = useState(true);
+
+  const value = {
+    donasi,
+    setDonasi,
+    selectedPayment,
+    setSelectedPayment,
+    email,
+    setEmail,
+    noRekening,
+    setNoRekening,
+    name,
+    setName,
+  };
+
+  return <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>;
+};
+
+// custom hooks
+function useGlobal() {
+  const context = useContext(GlobalContext);
+  if (context === undefined) {
+    throw new Error("useGlobal must be used within a GlobalProvider");
+  }
+  return context;
+}
+
+export { GlobalProvider, useGlobal };  //   const [isLoading, setIsLoading] = useState(true);
   //   const [nominal, setNominal] = useState(0);
 
   // mengambil data dari api
@@ -57,30 +83,3 @@ const GlobalProvider = ({ children }) => {
   //       setIsLoading(false);
   //     }
   //   };
-
-  const value = {
-    donasi,
-    setDonasi,
-    selectedPayment,
-    setSelectedPayment,
-    email,
-    setEmail,
-    noRekening,
-    setNoRekening,
-    name,
-    setName,
-  };
-
-  return <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>;
-};
-
-// custom hooks
-function useGlobal() {
-  const context = useContext(GlobalContext);
-  if (context === undefined) {
-    throw new Error("useGlobal must be used within a GlobalProvider");
-  }
-  return context;
-}
-
-export { GlobalProvider, useGlobal };

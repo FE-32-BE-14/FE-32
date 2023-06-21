@@ -80,6 +80,7 @@ function AcceptPembayaran() {
               email,
               noRekening,
               harapan,
+              donasi,
             })
             .then((res) => {
               console.log("isi dari API", res);
@@ -91,7 +92,8 @@ function AcceptPembayaran() {
               setHarapan("");
             })
             .catch((err) => console.log(err));
-          Swal.fire("Terima Kasih!", "Donasi yang anda berikan sudah berhasil", "success").then(() => {
+          Swal.fire("Terima Kasih!", "Donasi yang anda berikan sudah berhasil", "success")
+          .then(() => {
             window.location.href = "/donasi";
           });
         }
@@ -106,7 +108,7 @@ function AcceptPembayaran() {
           <div id="pmbksKetiga">
             <Form onSubmit={handleSubmit}>
               <p>Isi nominal Donasi</p>
-              <input name="value" id="value" type="text" readOnly className="valueNominal" value={"Rp. " + donasi} />
+              <input name="donasi" id="donasi" type="text" readOnly className="valueNominal" value={"Rp. " + donasi} />
               <input type="text" className="valueUsername" name="username" id="username" placeholder="Nama lengkap" value={name} onChange={handleUsernameChange} />
               <input type="text" value={email} onChange={handleEmailChange} className="inputEmail" name="email" id="email" placeholder="Alamat Email" />
               <input type="text" value={noRekening} onChange={handleNumberChange} className="inputEmail" name="rekening" id="noRekening" placeholder="No Rekening" />
