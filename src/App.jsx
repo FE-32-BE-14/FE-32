@@ -1,14 +1,14 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, AuthContext } from './context/AuthContext';
-import { VerifikasiProvider } from './context/VerifikasiContext';
-import LoginPage from './components/Login-Verifikasi/Login';
-import RegisterPage from './components/Login-Verifikasi/Register';
-import VerifikasiSuccess from './components/Login-Verifikasi/VerifikasiSuccess';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider, AuthContext } from "./context/AuthContext";
+import { VerifikasiProvider } from "./context/VerifikasiContext";
+import LoginPage from "./components/Login-Verifikasi/Login";
+import RegisterPage from "./components/Login-Verifikasi/Register";
+import VerifikasiSuccess from "./components/Login-Verifikasi/VerifikasiSuccess";
 import PageDonasi from "./pages/PageDonasi";
 import PagePembayaran from "./pages/PagePembayaran";
-import AcceptPembayaran from './components/AcceptPembayaran/AcceptPembayaran';
-import VerifikasiPage from './pages/VerifikasiPage';
+import AcceptPembayaran from "./components/AcceptPembayaran/AcceptPembayaran";
+import VerifikasiPage from "./pages/VerifikasiPage";
 
 const App = () => {
   return (
@@ -20,7 +20,11 @@ const App = () => {
             element={
               <AuthContext.Consumer>
                 {({ isLoggedIn }) =>
-                  isLoggedIn ? <PageDonasi /> : <Navigate to="/login" replace={true} />
+                  isLoggedIn ? (
+                    <PageDonasi />
+                  ) : (
+                    <Navigate to="/login" replace={true} />
+                  )
                 }
               </AuthContext.Consumer>
             }
