@@ -9,11 +9,19 @@ import PageDonasi from "./pages/PageDonasi";
 import PagePembayaran from "./pages/PagePembayaran";
 import AcceptPembayaran from './components/AcceptPembayaran/AcceptPembayaran';
 import VerifikasiPage from './pages/VerifikasiPage';
+import BeasiswaList from "./components/BeasiswaList";
+import DetailBeasiswa from "./pages/DetailBeasiswa";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { FooterProvider } from "./context/FooterContext";
+
 
 const App = () => {
   return (
     <AuthProvider>
       <VerifikasiProvider>
+      <Navbar />
+      <FooterProvider>
         <Routes>
           <Route
             path="/"
@@ -32,9 +40,14 @@ const App = () => {
           <Route path="/pembayaran" element={<PagePembayaran />} />
           <Route path="/accept" element={<AcceptPembayaran />} />
           <Route path="/donasi" element={<PageDonasi />} />
+          <Route path="/beasiswa" element={<BeasiswaList />} />
+          <Route path="/detail-beasiswa" element={<DetailBeasiswa />} />
         </Routes>
+        <Footer />
+      </FooterProvider>
       </VerifikasiProvider>
     </AuthProvider>
+
   );
 };
 
