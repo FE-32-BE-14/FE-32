@@ -1,9 +1,13 @@
 import React from "react";
 import "./DetailBeasiswa.css";
 import skilvulLogo from "../assets/skilvul.png";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const DetailBeasiswa = () => {
   return (
+    <>
+    <Navbar />
     <div>
       <div className="rectangle">
         <p className="title">Merit Scholarship</p>
@@ -86,6 +90,8 @@ const DetailBeasiswa = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

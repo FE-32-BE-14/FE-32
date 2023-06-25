@@ -20,7 +20,6 @@ const App = () => {
   return (
     <AuthProvider>
       <VerifikasiProvider>
-      <Navbar />
       <FooterProvider>
         <Routes>
           <Route
@@ -43,7 +42,6 @@ const App = () => {
           <Route path="/beasiswa" element={<BeasiswaList />} />
           <Route path="/detail-beasiswa" element={<DetailBeasiswa />} />
         </Routes>
-        <Footer />
       </FooterProvider>
       </VerifikasiProvider>
     </AuthProvider>

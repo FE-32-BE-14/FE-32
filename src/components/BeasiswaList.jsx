@@ -5,6 +5,8 @@ import "./BeasiswaList.css";
 import "./Footer.css";
 import logoAYO from "../assets/LogooAYO.png";
 import skilvulLogo from "../assets/skilvul.png";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const BeasiswaList = () => {
   const {  toggleContact } = useContext(FooterContext);
@@ -32,6 +34,8 @@ const BeasiswaList = () => {
   ];
 
   return (
+    <>
+    <Navbar />
     <div>
       <div className="rectangle">
         <h2>Program Beasiswa</h2>
@@ -61,6 +65,8 @@ const BeasiswaList = () => {
         ))}
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
