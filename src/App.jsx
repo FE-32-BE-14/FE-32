@@ -14,6 +14,10 @@ import DetailBeasiswa from "./pages/DetailBeasiswa";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { FooterProvider } from "./context/FooterContext";
+import Beasiswa1 from "./pages/Beasiswa1.jsx";
+import Beasiswa2 from "./pages/Beasiswa2.jsx";
+import Beasiswa3 from "./pages/Beasiswa3.jsx";
+import Donasi from "./pages/Donasi.jsx";
 
 
 const App = () => {
@@ -41,6 +45,10 @@ const App = () => {
           <Route path="/donasi" element={<PageDonasi />} />
           <Route path="/beasiswa" element={<BeasiswaList />} />
           <Route path="/detail-beasiswa" element={<DetailBeasiswa />} />
+          <Route path="/Beasiswa1" element={<Beasiswa1 />} />
+          <Route path="/Beasiswa2" element={<Beasiswa2 />} />
+          <Route path="/Beasiswa3" element={<Beasiswa3 />} />
+          <Route path="/forum-donasi" element={<Donasi />} />
         </Routes>
       </FooterProvider>
       </VerifikasiProvider>
