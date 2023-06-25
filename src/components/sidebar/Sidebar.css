@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #0159a1;
+  transition: width 0.3s ease;
+}
+
+.sidebar .top_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.sidebar .logo {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.sidebar .bars {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.sidebar .link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar .link:hover {
+  background-color: #ccc;
+}
+ 
+.sidebar .link .icon {
+  margin-right: 10px;
+}
+
+.sidebar .link .link_text {
+  display: none;
+}
+
+.sidebar .link.active {
+  background-color: #999;
+  color: #fff;
+}
+
+.sidebar .link.active .link_text {
+  display: block;
+}
+
+.main {
+  margin-left: 200px; /* Sesuaikan dengan lebar Sidebar */
+  padding: 20px;
+}
