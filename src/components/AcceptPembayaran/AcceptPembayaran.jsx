@@ -45,7 +45,7 @@ function AcceptPembayaran() {
           title: "Oops...",
           text: "Masukan Email dengan benar",
         });
-      } else if (number === "") {
+      } else if (noRekening === "") {
         Swal.fire({
           icon: "error",
           title: "Oops...",
